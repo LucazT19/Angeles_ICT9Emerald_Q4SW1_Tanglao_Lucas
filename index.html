@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(to right, #6a82fb, #fc5c7d);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    input {
+      width: 90%;
+      padding: 8px;
+      margin: 8px 0;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .check {
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: center; 
+}
+
+    button {
+      padding: 8px 15px;
+      margin: 10px 5px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .login {
+      background: #00bcd4;
+      color: white;
+    }
+
+    .cancel {
+      background: #ccc;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .instructions {
+      font-size: 12px;
+      color: gray;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>Login</h2>
+
+  <input type="text" id="user" placeholder="Username">
+  <input type="password" id="pass" placeholder="Password">
+
+  <div class="check">
+    <input type="checkbox"> Stay logged in
+  </div>
+
+  <button class="login" onclick="login()">Login</button>
+  <button class="cancel" onclick="clearFields()">Cancel</button>
+
+  <p class="instructions">
+    Enter your username and password to login.
+  </p>
+</div>
+
+<script>
+  function login() {
+    var u = document.getElementById("user").value;
+    var p = document.getElementById("pass").value;
+
+    if (u == "admin" && p == "1234") {
+      alert("Access granted");
+    } else {
+      alert("Access denied");
+    }
+  }
+
+  function clearFields() {
+    document.getElementById("user").value = "";
+    document.getElementById("pass").value = "";
+  }
+</script>
+
+</body>
+</html>
